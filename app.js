@@ -17,6 +17,7 @@ app.use(cookieParser());
 
 // Routes
 app.use("/api", require("./routes/auth"));
+app.use("/api", require("./routes/user"));
 
 // Port
 const PORT = process.env.PORT || 5000;

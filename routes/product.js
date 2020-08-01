@@ -11,8 +11,18 @@ const {
   read,
   remove,
   update,
+  list,
+  listRelated,
+  listCategories,
+  listBySearch,
+  photo,
 } = require("../controllers/product");
 
+router.get("/product/photo/:productId", photo);
+router.post("/products/by/search", listBySearch);
+router.get("/products/categories", listCategories);
+router.get("/products/related/:productId", listRelated);
+router.get("/products", list);
 router.get("/product/:productId", read);
 router.post("/product/create/:userId", requireSignin, isAuth, isAdmin, create);
 router.delete(
